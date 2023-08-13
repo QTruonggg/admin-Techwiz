@@ -4,7 +4,7 @@ import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import UserContext from "../../store/context";
 import React, { useContext, useState, useEffect } from "react";
-import {get} from "../../services/user.service";
+import {get} from "../../services/feeback.service";
 import { Link } from "react-router-dom";
 import Sidebar from "../global/Sidebar";
 import Topbar from "../global/Topbar";
@@ -19,13 +19,19 @@ const ListFeedback = (props) => {
   const [user, setUser] = useState([]);
   const[idde,setIdde] = useState(0);
 
+
   const getUser = async ()=>{
     dispatch({type:"SHOW_LOADING"});
 
-    const user = await get();
-    setUser(user);
+    const feedback = await get();
+    setUser(feedback);
     dispatch({type:"HIDE_LOADING"});
-    console.log(user);
+    console.log(feedback);
+
+  }
+  const changeActive = async()=>{
+
+
 
   }
   
@@ -34,6 +40,9 @@ const ListFeedback = (props) => {
    getUser();
     
    },[]);
+  
+  
+
 
 
   return (
@@ -59,41 +68,41 @@ const ListFeedback = (props) => {
                     <thead>
                         <th style={{}}>STT</th>
                         <th style={{}}>Status</th>
-                        {/* <th style={{}}>Thumbnail</th> */}
-                        <th style={{}}>Name</th>
-                        <th style={{}}>Email</th>
-                        <th style={{}}>Address</th>
-                        <th style={{}}>City</th>
-                        <th style={{}}>Country</th>
+                      
+                        <th style={{}}>User Name</th>
+                        <th style={{}}>Provider</th>
+                        <th style={{}}>Content Feedback</th>
+
+                        
+                        
                         <th style={{}}>Details</th>
 
                         
                         
                     </thead>
                     <tbody>
-                        {
+                        {/* {
                             user.map((e,k)=>{
                                 return (
                                     <tr key={k}>
                                         <td style={{}}>{k+1}</td> 
                                         <td style={{}}>{(e.isActive)?"Active":"Not"}</td>
-                                        {/* <td style={{}}><img src={e.thumbnail} width={80} style={{borderRadius:10}} /></td>   */}
-                                        <td style={{}}>{e.name}</td>
-                                        <td style={{}}>{e.email}</td>    
-                                        <td style={{}}>{e.address}</td> 
-                                        <td style={{}}>{e.city}</td>
-                                        <td style={{}}>{e.country}</td>
+                                        <td style={{}}>{e.userName}</td>
+                                        <td style={{}}>{e.providerName}</td>    
+                                        <td style={{}}>{e.feedback}</td>    
+
                                         
-                                        <td style={{}}><Link to={"/user-edit/"+e.id}>
-                                            <button style={{}} className="btn btn-info">
-                                            Detail
+                                        
+                                        <td style={{}}>
+                                            <button style={{}} onClick={changeActive} className="btn btn-info">
+                                            Active
                                             </button> 
-                                            </Link></td>
+                                            </td>
                                       
                                     </tr>
                                     )
                             })
-                        }
+                        } */}
                         
                     </tbody>
                 </table>

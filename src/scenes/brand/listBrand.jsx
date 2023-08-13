@@ -40,7 +40,6 @@ const ListBrand = (props) => {
     <main className="content">
       <Topbar/>
     <Box m="20px">
-      <Header title="LIST PROVIDERS" subtitle="LIST PROVIDERS" />
 
       <div className="container shadow" style={{display:'grid'}}>
                 <h1 style={{margin:'auto', marginTop:'24px'}}>PROVIDERS</h1>
@@ -56,24 +55,25 @@ const ListBrand = (props) => {
                         <th style={{}}>Thumbnail</th>
                         <th style={{}}>Name</th>
                         <th style={{}}>Description</th>
-                        <th style={{}}>Action</th>
+                        {/* <th style={{}}>Action</th> */}
                         
                         
                     </thead>
                     <tbody>
                         {
                             brand.map((e,k)=>{
+                              
                                 return (
                                     <tr key={k}>
                                         <td style={{}}>{k+1}</td> 
-                                        <td style={{}}><img src={e.thumbnail} width={80} borderRadius ={8}/></td>   
+                                        <td style={{}}><img crossorigin="anonymous" src={"https://appserviceccc.azurewebsites.net"+e.thumbnail} width={80} borderRadius ={8}/></td>   
                                         <td style={{}}>{e.name}</td>    
                                         <td style={{}}>{e.description}</td> 
-                                        <td style={{}}><Link to={"/brand-edit/"+e.id}>
+                                        {/* <td style={{}}><Link to={"/brand-edit/"+e.id}>
                                             <button style={{borderRadius:3, backgroundColor:"pink"}} className=" w-50 car__item-btn car__btn-details">
                                             Edit
                                             </button> 
-                                            </Link></td>
+                                            </Link></td> */}
                                       
                                     </tr>
                                     )

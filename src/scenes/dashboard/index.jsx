@@ -17,6 +17,8 @@ import { tinhtong, tong_month } from "../../services/contract.service";
 import { blueGrey, pink } from "@mui/material/colors";
 import Sidebar from "../global/Sidebar";
 import Topbar from "../global/Topbar";
+import {get} from "../../services/user.service"
+
 
 
 
@@ -26,11 +28,14 @@ const Dashboard = () => {
   const {state,dispatch} = useContext(UserContext);
   const [tong, setTong] = useState(0);
   const[da,setDa] = useState([]);
+  const [user,setUser]= useState([]);
 
   const getDa = async ()=>{
     dispatch({type:"SHOW_LOADING"});
 
     const da = await tong_month();
+    const user = await get();
+    setUser(user);
     setDa(da);
     dispatch({type:"HIDE_LOADING"});
 
@@ -96,14 +101,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Total
+                 Total User Active: {user.length}
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                ${tong}
+                
               </Typography>
             </Box>
             <Box>
@@ -116,7 +121,7 @@ const Dashboard = () => {
           </Box>
           <Box height="250px" m="-20px 0 0 0" style={{marginTop:30,marginLeft:30}}>
             
-          <h3>Revenue In Month</h3>
+          {/* <h3>Revenue In Month</h3> */}
 
           <table className="table" style={{border:"1px solid white", marginTop:20}}>
                     <thead>

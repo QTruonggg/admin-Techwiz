@@ -82,7 +82,6 @@ const submitUpload = async ()=>{
     <main className="content">
       <Topbar/>
     <Box m="20px">
-    <Header title="EDIT BRAND" subtitle="CREATE BRAND" />
 
     <Formik>
        

@@ -145,7 +145,7 @@ const Sidebar = () => {
               
             />
              <Item
-              title={"Product"}
+              title={"Movie/Chanel"}
               to={"/listtype"}
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}

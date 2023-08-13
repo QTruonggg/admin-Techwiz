@@ -52,7 +52,6 @@ const EditProduct = (props)=>{
     <main className="content">
       <Topbar/>
     <Box m="20px">
-    <Header title="EDIT PRODUCT" subtitle="" />
 
     <Formik>
        

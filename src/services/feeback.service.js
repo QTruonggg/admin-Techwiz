@@ -2,9 +2,9 @@ import api from "./api";
 
 export const get = async ()=>{
     try{
-     const url = "manage";
+     const url = "manage-feedback/getall";
      const rs = await api.get(url);
-     return rs.data.data;
+     return rs.data;
     }catch(error){
         return [];
     }
@@ -12,11 +12,9 @@ export const get = async ()=>{
  
  export const find = async (id)=>{
     try {
-        const url = "manage/getUser/?id="+id;
-        const rs = await api.get(url);
- 
-
-        return rs.data.services;
+        const url = "manage/getUser/:id";
+        const rs = await api.get(url,{id});
+        return rs.data;
     } catch (error) {
         return {};
     }

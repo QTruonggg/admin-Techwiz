@@ -34,6 +34,7 @@ const ListUser = (props) => {
    getUser();
     
    },[]);
+   console.log(user);
 
 
   return (
@@ -42,7 +43,6 @@ const ListUser = (props) => {
     <main className="content">
       <Topbar/>
     <Box m="20px">
-      <Header title="LIST USERS" subtitle="LIST USERS" />
 
       <div className="container shadow">
                 <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', padding:'24px'}}>
@@ -58,13 +58,10 @@ const ListUser = (props) => {
                 <table className="table" style={{}} >
                     <thead>
                         <th style={{}}>STT</th>
-                        <th style={{}}>Status</th>
                         {/* <th style={{}}>Thumbnail</th> */}
                         <th style={{}}>Name</th>
-                        <th style={{}}>Email</th>
                         <th style={{}}>Address</th>
                         <th style={{}}>City</th>
-                        <th style={{}}>Country</th>
                         <th style={{}}>Details</th>
 
                         
@@ -76,15 +73,12 @@ const ListUser = (props) => {
                                 return (
                                     <tr key={k}>
                                         <td style={{}}>{k+1}</td> 
-                                        <td style={{}}>{(e.isActive)?"Active":"Not"}</td>
                                         {/* <td style={{}}><img src={e.thumbnail} width={80} style={{borderRadius:10}} /></td>   */}
                                         <td style={{}}>{e.name}</td>
-                                        <td style={{}}>{e.email}</td>    
                                         <td style={{}}>{e.address}</td> 
                                         <td style={{}}>{e.city}</td>
-                                        <td style={{}}>{e.country}</td>
                                         
-                                        <td style={{}}><Link to={"/user-edit/"+e.id}>
+                                        <td style={{}}><Link to={"/user-edit/"+e.userId._id}>
                                             <button style={{}} className="btn btn-info">
                                             Detail
                                             </button> 

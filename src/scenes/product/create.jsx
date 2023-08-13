@@ -10,45 +10,47 @@ import {create_typeCar} from "../../services/typeCar.service";
 import Sidebar from "../global/Sidebar";
 import Topbar from "../global/Topbar";
 import api from "../../services/api";
-import { create_brand } from "../../services/brand.service";
+import { create_movie } from "../../services/movie.service";
 
 const CreateProduct = ()=>{
     const isNonMobile = useMediaQuery("(min-width: 600px)");
     const { state, dispatch } = useContext(UserContext);
     const [file, setFile] = useState();
     const [fileUrl, setFileUrl] = useState();
-    const [product, setProduct] = useState({
+    const [movie, setMovie] = useState({
       name: "",
       description: "",
-      thumbnail: "",
+      provider:"",
+      actor:"",
+      thumbnail: "/uploads/streamprovider/po5.jpg",
     });
     const handleChange = (event) => {
-      product[event.target.name] = event.target.value;
-      setProduct(product);
+      movie[event.target.name] = event.target.value;
+      setMovie(movie);
     };
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const t = await create_brand(product);
+      const t = await create_movie(movie);
       console.log(t);
     };
-    const thumbnail = fileUrl ? <img src={fileUrl} width={80} /> : null;
-    const uploadFile = (e) => {
-      const f = e.target.files[0];
-      setFile(f);
-    };
-    const submitUpload = async () => {
-      const url = "upload/image";
-      const formData = new FormData();
-      formData.append("image", file);
-      const config = {
-        headers: {
-          "content-type": "multipart/form-data",
-        },
-      };
-      const rs = await api.post(url, formData, config);
-      setFileUrl(rs.data);
-      setProduct({ ...product, thumbnail: rs.data });
-    };
+    // const thumbnail = fileUrl ? <img src={fileUrl} width={80} /> : null;
+    // const uploadFile = (e) => {
+    //   const f = e.target.files[0];
+    //   setFile(f);
+    // };
+    // const submitUpload = async () => {
+    //   const url = "upload/image";
+    //   const formData = new FormData();
+    //   formData.append("image", file);
+    //   const config = {
+    //     headers: {
+    //       "content-type": "multipart/form-data",
+    //     },
+    //   };
+    //   const rs = await api.post(url, formData, config);
+    //   setFileUrl(rs.data);
+    //   setMovie({ ...movie, thumbnail: rs.data });
+    // };
 
 
 
@@ -59,7 +61,6 @@ const CreateProduct = ()=>{
       <main className="content">
         <Topbar />
         <Box m="20px">
-          <Header title="CREATE BRAND" subtitle="CREATE BRAND" />
 
           <div className="container shadow">
             <Formik>
@@ -74,7 +75,6 @@ const CreateProduct = ()=>{
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Name"
                       onChange={handleChange}
                       name="name"
                       sx={{ gridColumn: "span 2" }}
@@ -86,14 +86,40 @@ const CreateProduct = ()=>{
                       fullWidth
                       variant="filled"
                       type="text"
-                      label="Description"
                       onChange={handleChange}
                       name="description"
                       sx={{ gridColumn: "span 2" }}
                     />
                   </Box>
                 </div>
-                <p style={{ marginTop: 40 }}></p>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Box display="grid" width="48%">
+                    <label>Provider </label>
+
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      onChange={handleChange}
+                      name="provider"
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                  </Box>
+                  <Box display="grid" width="48%">
+                    <label>Actor: </label>
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      onChange={handleChange}
+                      name="actor"
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                  </Box>
+                </div>
+                {/* <p style={{ marginTop: 40 }}></p>
                 <div style={{display:'flex', alignItems:'flex-end'}}>
                 <Box display="grid" width="48%">
                 <label for="avatar" className="form-label">
@@ -115,7 +141,7 @@ const CreateProduct = ()=>{
                 >
                   Upload
                 </button>
-                </div>
+                </div> */}
 
                 <Box
                   display="flex"

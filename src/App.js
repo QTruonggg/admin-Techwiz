@@ -79,30 +79,31 @@ function App() {
           <Routes>
             <Route path="/" element={<Login/>} />
             <Route path="/home" element={<PrivateRoute element={<Dashboard />} />} />
-            <Route path="/team" element={<PrivateRoute element={<Team />} />} />
-            <Route path="/contacts" element={<PrivateRoute element={<Contacts />} />} />
-            <Route path="/invoices" element={<PrivateRoute element={<Invoices />} />} />
+            {/* <Route path="/team" element={<PrivateRoute element={<Team />} />} /> */}
+            {/* <Route path="/contacts" element={<PrivateRoute element={<Contacts />} />} /> */}
+            {/* <Route path="/invoices" element={<PrivateRoute element={<Invoices />} />} /> */}
             <Route path="/form" element={<PrivateRoute element={<Form />} />} />
             <Route path="/listbrand" element={<PrivateRoute element={<ListBrand />} />} />
             <Route path="/listfeedback" element={<PrivateRoute element={<ListFeedback />} />} />
 
-            <Route path="/faq" element={<PrivateRoute element={<FAQ />} />} />
-            <Route path="/bar" element={<PrivateRoute element={<Bar />} />} />
-            <Route path="/pie" element={<PrivateRoute element={<Pie />} />} />
-            <Route path="/line" element={<PrivateRoute element={<Line />} />} />
-            <Route path="/geography" element={<PrivateRoute element={<Geography />} />} />
-            <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
+            {/* <Route path="/faq" element={<PrivateRoute element={<FAQ />} />} /> */}
+            {/* <Route path="/bar" element={<PrivateRoute element={<Bar />} />} /> */}
+            {/* <Route path="/pie" element={<PrivateRoute element={<Pie />} />} /> */}
+            {/* <Route path="/line" element={<PrivateRoute element={<Line />} />} /> */}
+            {/* <Route path="/geography" element={<PrivateRoute element={<Geography />} />} /> */}
+            {/* <Route path="/profile" element={<PrivateRoute element={<Profile />} />} /> */}
             <Route path="/listtype" element={<PrivateRoute element={<ListProduct />} />} />
             <Route path="/create-product" element={<PrivateRoute element={<CreateProduct />} />} />
             <Route path='/product-edit/:id' element={<PrivateRoute element={<EditProduct />} />} />
             <Route path="/create-brands" element={<PrivateRoute element={<CreateBrand />} />} />
             <Route path='/brand-edit/:id' element={<PrivateRoute element={<EditBrand />} />} />
+
             <Route path="/listUser" element={<PrivateRoute element={<ListUser />} />} />
             <Route path='/user-edit/:id' element={<PrivateRoute element={<EditUser />} />} />
             <Route path='/contract-edit/:id' element={<PrivateRoute element={<EditContract />} />} />
-            <Route path='/contractagree' element={<PrivateRoute element={<Contractagree />} />} />
-            <Route path='/contractdisagree' element={<PrivateRoute element={<Contractdisagree />} />} />
-            <Route path='/contractpayment' element={<PrivateRoute element={<Contractpayment />} />} />
+            {/* <Route path='/contractagree' element={<PrivateRoute element={<Contractagree />} />} /> */}
+            {/* <Route path='/contractdisagree' element={<PrivateRoute element={<Contractdisagree />} />} /> */}
+            {/* <Route path='/contractpayment' element={<PrivateRoute element={<Contractpayment />} />} /> */}
           </Routes>
 
     </ThemeProvider>
@@ -125,23 +126,24 @@ function App() {
             <Route path="/listbrand" element={<PrivateRoute element={<ListBrand />} />} />
             <Route path="/listfeedback" element={<PrivateRoute element={<ListFeedback />} />} />
 
-            <Route path="/faq" element={<PrivateRoute element={<FAQ />} />} />
-            <Route path="/bar" element={<PrivateRoute element={<Bar />} />} />
-            <Route path="/pie" element={<PrivateRoute element={<Pie />} />} />
-            <Route path="/line" element={<PrivateRoute element={<Line />} />} />
-            <Route path="/geography" element={<PrivateRoute element={<Geography />} />} />
-            <Route path="/profile" element={<PrivateRoute element={<Profile />} />} />
+            {/* <Route path="/faq" element={<PrivateRoute element={<FAQ />} />} /> */}
+            {/* <Route path="/bar" element={<PrivateRoute element={<Bar />} />} /> */}
+            {/* <Route path="/pie" element={<PrivateRoute element={<Pie />} />} /> */}
+            {/* <Route path="/line" element={<PrivateRoute element={<Line />} />} /> */}
+            {/* <Route path="/geography" element={<PrivateRoute element={<Geography />} />} /> */}
+            {/* <Route path="/profile" element={<PrivateRoute element={<Profile />} />} /> */}
             <Route path="/listtype" element={<PrivateRoute element={<ListProduct />} />} />
             <Route path="/create-product" element={<PrivateRoute element={<CreateProduct />} />} />
             <Route path='/product-edit/:id' element={<PrivateRoute element={<EditProduct />} />} />
             <Route path="/create-brands" element={<PrivateRoute element={<CreateBrand />} />} />
             <Route path='/brand-edit/:id' element={<PrivateRoute element={<EditBrand />} />} />
+
             <Route path="/listUser" element={<PrivateRoute element={<ListUser />} />} />
             <Route path='/user-edit/:id' element={<PrivateRoute element={<EditUser />} />} />
-            <Route path='/contract-edit/:id' element={<PrivateRoute element={<EditContract />} />} />
-            <Route path='/contractagree' element={<PrivateRoute element={<Contractagree />} />} />
-            <Route path='/contractdisagree' element={<PrivateRoute element={<Contractdisagree />} />} />
-            <Route path='/contractpayment' element={<PrivateRoute element={<Contractpayment />} />} />
+            {/* <Route path='/contract-edit/:id' element={<PrivateRoute element={<EditContract />} />} /> */}
+            {/* <Route path='/contractagree' element={<PrivateRoute element={<Contractagree />} />} /> */}
+            {/* <Route path='/contractdisagree' element={<PrivateRoute element={<Contractdisagree />} />} /> */}
+            {/* <Route path='/contractpayment' element={<PrivateRoute element={<Contractpayment />} />} /> */}
           </Routes>
 
       </ThemeProvider>

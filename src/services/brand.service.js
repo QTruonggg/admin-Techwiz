@@ -2,7 +2,7 @@ import api from "./api";
 
 export const get = async ()=>{
     try{
-     const url = "manage/stream-provider/getall";
+     const url = "manage-provider/getall";
      const rs = await api.get(url);
      return rs.data;
     }catch(error){
@@ -21,13 +21,13 @@ export const get = async ()=>{
 }
 
 export const create_brand = async(brand) =>{
-    const url = "brands"
+    const url = "manage-provider/create"
     try{
-        const rs = await api.post(url,{name: brand.name,description: brand.description, thumbnail: brand.thumbnail});
-        alert("Tao brand thanh cong");
+        const rs = await api.post(url,{name: brand.name,description: brand.description, packages: brand.packages, thumbnail:brand.thumbnail});
+        alert("Create Success");
         return rs.data;
     }catch(error){
-        alert("Tao brand that bai");
+        alert("Create Fail");
         return {};
     }
 }

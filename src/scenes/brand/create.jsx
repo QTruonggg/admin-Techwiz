@@ -19,7 +19,8 @@ const CreateBrand = () => {
   const [brand, setBrand] = useState({
     name: "",
     description: "",
-    thumbnail: "",
+    packages:"",
+    thumbnail: "/uploads/streamprovider/vider2.jpg",
   });
   const handleChange = (event) => {
     brand[event.target.name] = event.target.value;
@@ -30,24 +31,24 @@ const CreateBrand = () => {
     const t = await create_brand(brand);
     console.log(t);
   };
-  const thumbnail = fileUrl ? <img src={fileUrl} width={80} /> : null;
-  const uploadFile = (e) => {
-    const f = e.target.files[0];
-    setFile(f);
-  };
-  const submitUpload = async () => {
-    const url = "upload/image";
-    const formData = new FormData();
-    formData.append("image", file);
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data",
-      },
-    };
-    const rs = await api.post(url, formData, config);
-    setFileUrl(rs.data);
-    setBrand({ ...brand, thumbnail: rs.data });
-  };
+  // const thumbnail = fileUrl ? <img src={fileUrl} width={80} /> : null;
+  // const uploadFile = (e) => {
+  //   const f = e.target.files[0];
+  //   setFile(f);
+  // };
+  // const submitUpload = async () => {
+  //   const url = "upload/image";
+  //   const formData = new FormData();
+  //   formData.append("image", file);
+  //   const config = {
+  //     headers: {
+  //       "content-type": "multipart/form-data",
+  //     },
+  //   };
+  //   const rs = await api.post(url, formData, config);
+  //   setFileUrl(rs.data);
+  //   setBrand({ ...brand, thumbnail: rs.data });
+  // };
 
   return (
     <div className="app">
@@ -55,7 +56,6 @@ const CreateBrand = () => {
       <main className="content">
         <Topbar />
         <Box m="20px">
-          <Header title="CREATE BRAND" subtitle="CREATE BRAND" />
 
           <div className="container shadow">
             <Formik>
@@ -88,9 +88,22 @@ const CreateBrand = () => {
                       sx={{ gridColumn: "span 2" }}
                     />
                   </Box>
+                  
                 </div>
+                <Box display="grid" width="48%">
+                    <label>Package: </label>
+                    <TextField
+                      fullWidth
+                      variant="filled"
+                      type="text"
+                      label="Package"
+                      onChange={handleChange}
+                      name="packages"
+                      sx={{ gridColumn: "span 2" }}
+                    />
+                  </Box>
                 <p style={{ marginTop: 40 }}></p>
-                <div style={{display:'flex', alignItems:'flex-end'}}>
+                {/* <div style={{display:'flex', alignItems:'flex-end'}}>
                 <Box display="grid" width="48%">
                 <label for="avatar" className="form-label">
                   Image :{thumbnail}
@@ -111,7 +124,7 @@ const CreateBrand = () => {
                 >
                   Upload
                 </button>
-                </div>
+                </div> */}
 
                 <Box
                   display="flex"
