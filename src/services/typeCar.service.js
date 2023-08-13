@@ -73,4 +73,4 @@ export const get_type = async ()=>{
     } catch (error) {
         return {};
     }
-}
+ }

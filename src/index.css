@@ -12,6 +12,9 @@ body,
   height: auto;
   font-family: 'Source Sans Pro', sans-serif;
 }
+.content{
+  padding-left: 270px;
+}
 .app{
   display: flex;
   position: relative;

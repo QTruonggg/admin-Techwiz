@@ -44,7 +44,9 @@ const Sidebar = () => {
   return (
     <Box sx={{
       ".pro-sidebar":{
-        height: "100vh"
+        position:'fixed',
+        left:'0'
+
       },
       "& .pro-sidebar-inner": {
         background: `#d8d8d8 !important`
@@ -145,7 +147,7 @@ const Sidebar = () => {
               
             />
              <Item
-              title={"Movie/Chanel"}
+              title={"Movie/Channel"}
               to={"/listtype"}
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}

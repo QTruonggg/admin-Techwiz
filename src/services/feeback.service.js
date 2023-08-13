@@ -9,36 +9,6 @@ export const get = async ()=>{
         return [];
     }
  }
- 
- export const find = async (id)=>{
-    try {
-        const url = "manage/getUser/:id";
-        const rs = await api.get(url,{id});
-        return rs.data;
-    } catch (error) {
-        return {};
-    }
-}
 
 
-export const edit_user = async(user) =>{
-    const url = "/"
-    try{
-        const rs = await api.put(url,{user});
-        return {};
-    }catch(error){
-        return {};
-    }
-}
-export const remove_car = async (idde)=>{
-    try{
-        const url = "cars?id="+idde;
-        const rs = await api.delete(url);
-        alert("Delete thanh cong");
-        return {};
-    }catch(error){
-        alert("Delete that bai");
-        return {};
-    }
 
-}

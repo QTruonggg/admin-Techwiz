@@ -23,9 +23,9 @@ const ListUser = (props) => {
     dispatch({type:"SHOW_LOADING"});
 
     const user = await get();
+
     setUser(user);
     dispatch({type:"HIDE_LOADING"});
-    console.log(user);
 
   }
   
@@ -69,15 +69,15 @@ const ListUser = (props) => {
                     </thead>
                     <tbody>
                         {
-                            user.map((e,k)=>{
-                                return (
+                            user.map((e,k)=>(
+                              
+                               
                                     <tr key={k}>
                                         <td style={{}}>{k+1}</td> 
                                         {/* <td style={{}}><img src={e.thumbnail} width={80} style={{borderRadius:10}} /></td>   */}
                                         <td style={{}}>{e.name}</td>
                                         <td style={{}}>{e.address}</td> 
                                         <td style={{}}>{e.city}</td>
-                                        
                                         <td style={{}}><Link to={"/user-edit/"+e.userId._id}>
                                             <button style={{}} className="btn btn-info">
                                             Detail
@@ -85,8 +85,8 @@ const ListUser = (props) => {
                                             </Link></td>
                                       
                                     </tr>
-                                    )
-                            })
+                                    
+                            ))
                         }
                         
                     </tbody>

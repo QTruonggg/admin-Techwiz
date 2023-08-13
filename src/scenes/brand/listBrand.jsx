@@ -8,6 +8,7 @@ import {get} from "../../services/brand.service";
 import { Link } from "react-router-dom";
 import Sidebar from "../global/Sidebar";
 import Topbar from "../global/Topbar";
+import '../../css/product.css';
 
 
 
@@ -54,7 +55,7 @@ const ListBrand = (props) => {
                         <th style={{}}>STT</th>
                         <th style={{}}>Thumbnail</th>
                         <th style={{}}>Name</th>
-                        <th style={{}}>Description</th>
+                        <th  style={{width:'40%'}}>Description</th>
                         {/* <th style={{}}>Action</th> */}
                         
                         
@@ -65,10 +66,11 @@ const ListBrand = (props) => {
                               
                                 return (
                                     <tr key={k}>
-                                        <td style={{}}>{k+1}</td> 
-                                        <td style={{}}><img crossorigin="anonymous" src={"https://appserviceccc.azurewebsites.net"+e.thumbnail} width={80} borderRadius ={8}/></td>   
-                                        <td style={{}}>{e.name}</td>    
-                                        <td style={{}}>{e.description}</td> 
+                                        <td >{k+1}</td> 
+                                        <td ><img crossorigin="anonymous" src={"https://appserviceccc.azurewebsites.net"+e.thumbnail}  
+                                        width={90} height={120} borderRadius={8} style={{objectFit:'cover'}}/></td>   
+                                        <td >{e.name}</td>    
+                                        <td className="descr">{e.description}</td> 
                                         {/* <td style={{}}><Link to={"/brand-edit/"+e.id}>
                                             <button style={{borderRadius:3, backgroundColor:"pink"}} className=" w-50 car__item-btn car__btn-details">
                                             Edit

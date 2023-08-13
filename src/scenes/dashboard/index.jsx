@@ -101,7 +101,8 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                 Total User Active: {user.length}
+                 Total User Active: 
+                 <p className="h1 text-success" > {user.length} </p>
               </Typography>
               <Typography
                 variant="h3"

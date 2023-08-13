@@ -26,10 +26,11 @@ const EditUser = (props)=>{
         setUser(user);
         
     }
+    console.log(user)
     useEffect(()=>{
         findUser();
         },[]);
-        console.log(user);
+      
 
 
  return (
@@ -65,25 +66,21 @@ const EditUser = (props)=>{
                   <tbody>
                       
                           
-                                  <tr >
+                  {/* {
+                            user.map((e,k)=>(
+                              
+                               
+                                    <tr key={k}>
+                                        <td style={{}}>{k+1}</td> 
+                                        <td style={{}}>{e.name}</td>
+                                        <td style={{}}>{e.address}</td> 
+                                        <td style={{}}>{e.city}</td>
+                                       
                                       
-                                      <td style={{padding:5,border:"1px solid white"}}>
-                                      {(user.isActive===true)?
-                                      <button style={{}} className="btn btn-success">
-                                       Active
-                                      </button>
-
-                                      :<button style={{}} className="btn btn-danger">
-                                        Not Active
-                                        </button> }                                          </td>
-                                      {/* <td style={{padding:5,border:"1px solid white"}}><img src={e.thumbnail} width={80} style={{borderRadius:10}} /></td>   */}
-                                      <td style={{padding:5,border:"1px solid white"}}>{user.name}</td>
-                                      <td style={{padding:5,border:"1px solid white"}}>{user.price}</td>    
-                                      
-                                      
+                                    </tr>
                                     
-                                    
-                                  </tr>
+                            ))
+                } */}
                       
                       
                   </tbody>

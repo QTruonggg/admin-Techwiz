@@ -29,11 +29,7 @@ const ListFeedback = (props) => {
     console.log(feedback);
 
   }
-  const changeActive = async()=>{
-
-
-
-  }
+ 
   
 
   useEffect(()=>{
@@ -69,7 +65,6 @@ const ListFeedback = (props) => {
                         <th style={{}}>STT</th>
                         <th style={{}}>Status</th>
                       
-                        <th style={{}}>User Name</th>
                         <th style={{}}>Provider</th>
                         <th style={{}}>Content Feedback</th>
 
@@ -81,20 +76,19 @@ const ListFeedback = (props) => {
                         
                     </thead>
                     <tbody>
-                        {/* {
+                        {
                             user.map((e,k)=>{
                                 return (
                                     <tr key={k}>
                                         <td style={{}}>{k+1}</td> 
                                         <td style={{}}>{(e.isActive)?"Active":"Not"}</td>
-                                        <td style={{}}>{e.userName}</td>
-                                        <td style={{}}>{e.providerName}</td>    
+                                        <td style={{}}>{e.user_provider.provider}</td>    
                                         <td style={{}}>{e.feedback}</td>    
 
                                         
                                         
                                         <td style={{}}>
-                                            <button style={{}} onClick={changeActive} className="btn btn-info">
+                                            <button style={{}} className="btn btn-info">
                                             Active
                                             </button> 
                                             </td>
@@ -102,7 +96,7 @@ const ListFeedback = (props) => {
                                     </tr>
                                     )
                             })
-                        } */}
+                        }
                         
                     </tbody>
                 </table>

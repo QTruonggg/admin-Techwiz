@@ -12,11 +12,9 @@ export const get = async ()=>{
  
  export const find = async (id)=>{
     try {
-        const url = "manage/getUser/?id="+id;
+        const url = "manage/getUser?id="+id;
         const rs = await api.get(url);
- 
-
-        return rs.data.services;
+        return rs.data.data;
     } catch (error) {
         return {};
     }
