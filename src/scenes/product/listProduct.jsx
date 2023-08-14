@@ -25,6 +25,7 @@ const ListProduct = (props) => {
 
     const movie = await get();
     setMovie(movie);
+    console.log(movie);
     dispatch({ type: "HIDE_LOADING" });
   };
 
@@ -61,9 +62,12 @@ const ListProduct = (props) => {
                     <tr key={k}>
                       <td>{k + 1}</td>
                       <td>
-                        <img crossorigin="anonymous" src={"https://appserviceccc.azurewebsites.net" + e.thumbnail}
+                        {/* <img crossorigin="anonymous" src={"https://appserviceccc.azurewebsites.net" + e.thumbnail}
                          width={80} height={120} borderRadius={8} style={{objectFit:'cover'}}
-                         />
+                         /> */}
+                         <video width="80" height="120" controls>
+        <source src={"https://appserviceccc.azurewebsites.net" + e.thumbnail} type="video/mp4"/>
+    </video>
                       </td>
 
                       <td >{e.name}</td>
